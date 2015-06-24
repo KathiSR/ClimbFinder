@@ -1,0 +1,43 @@
+.tt-query {width: 100%
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint { width: 100%; 
+    color: #999
+}
+
+
+.tt-input-group {
+    width: 100%;
+}
+
+.tt-dropdown-menu {
+    width: 100%; 	
+    text-align: center;
+    margin-top: 12px;
+    padding: 8px 0;
+    background-color: #FFFEFE;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+    padding: 3px 20px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.tt-suggestion.tt-cursor { /* UPDATE: newer versions use .tt-suggestion.tt-cursor */
+    color: #fff;
+    background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+    margin: 0;
+}
+
+/*$('.typeahead.input-sm').siblings('input.tt-hint').addClass('hint-small');*/
+/*$('.typeahead.input-lg').siblings('input.tt-hint').addClass('hint-large');*/

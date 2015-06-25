@@ -1,7 +1,6 @@
 import pandas
 import numpy as np
 import re
-import pylab
 from sklearn.metrics.pairwise import cosine_similarity
 import MySQLdb as mdb
 

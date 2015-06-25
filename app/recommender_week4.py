@@ -46,28 +46,31 @@ def get_max_sim(ref_climb, comparisonclimbs, n = 5,):
        'ramp', 'rappel', 'roof', 'scramble', 'seam', 'slab', 'sloper',
        'solid', 'stance', 'steep', 'stemming', 'sustained', 'technical',
        'tower', 'traverse', 'undercling', 'average_rating']
-    
-    ref_climb = ref_climb[features]
+
+           
+    comparisonclimbs_features = comparisonclimbs.ix[:,features]
+    ref_climb_features = ref_climb[features]
     
     if len(comparisonclimbs) == 0:
         topfive = None
         return topfive
     
-    else:
-    	comparisonclimbs = comparisonclimbs.ix[:,features]
+    similarities = cosine_similarity(ref_climb_features, comparisonclimbs_features)
+    similarities_df = pandas.DataFrame(similarities).transpose().sort(0, ascending = False)
     
-    	similarities = cosine_similarity(ref_climb, comparisonclimbs)
-    	similarities_df = pandas.DataFrame(similarities).transpose().sort(0, ascending = False)
     
-    	if len(similarities_df) >= 5:
-        	topfive = similarities_df[:5]
-    	elif len(similarities_df) <= 5:
-        	if len(similarities_df) > 0:
-				topfive = similarities_df[:len(similarities_df)]
-        	else: 
-				topfive = None
+    if similarities_df.index[0] == ref_climb['index'][0]:
+        similarities_df = similarities_df[1:]
+        
+    if len(similarities_df) >= 5:
+        topfive = similarities_df[:5]
+    elif len(similarities_df) <= 5:
+        if len(similarities_df) > 0:
+            topfive = similarities_df[:len(similarities_df)]
+        else: 
+            topfive = None
     
-    return topfive
+    return similarities_df
     
 
 def get_climb_info(topfive, comparisonclimbs):

@@ -2,3 +2,10 @@
   padding: 5px 10px;
  text-align: center;
 }
+
+
+.panel-red {
+  border-color: #ed431f;
+  color: #ee4b28;
+    background-color: #ee4b28;
+}

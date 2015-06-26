@@ -7,6 +7,10 @@ import MySQLdb as mdb
 # set up connection with sql server
 con = mdb.connect('localhost', 'root', '', 'climbfinder_test')
 
+def setup_con(database):
+	con = mdb.connect('localhost', 'root', '', database)
+	return con
+
 
 def get_refclimb(name, crag = None):
     if crag == None:

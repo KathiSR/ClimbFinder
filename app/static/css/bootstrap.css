@@ -10,6 +10,13 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+
+
+#test {
+    font-size: 2em;
+    color: #777;
+}
+
 body {
   margin: 0;
 }
@@ -5298,6 +5305,7 @@ a.list-group-item-danger.active:focus {
   padding: 15px;
 }
 .panel-heading {
+  background-color: #fff;	
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-left-radius: 3px;
@@ -6563,4 +6571,6 @@ button.close {
     display: none !important;
   }
 }
+
+
 /*# sourceMappingURL=bootstrap.css.map */

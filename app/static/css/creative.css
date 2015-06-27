@@ -61,7 +61,7 @@ p {
 }
 
 .text-faded {
-    color: rgba(100,100,100,.7);
+    color: rgba(255,255,255,.7);
 }
 
 section {
@@ -198,7 +198,6 @@ header .header-content .header-content-inner h1 {
     margin-bottom: 0;
     text-transform: uppercase;
     font-weight: 700;
-    color: rgba(240,95,64)
 }
 
 header .header-content .header-content-inner hr {

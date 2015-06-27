@@ -1,0 +1,45 @@
+#panelbutton{
+  background-color: #fff;	
+  padding: 10px 15px;
+  border-color: #f05f40;
+  border-style: solid;
+  border-radius: 100px;
+  border-width: 3px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 600px;
+   }
+
+
+ #panelhead{
+  background-color: #0000ffff;  
+    }
+    
+    
+#input{
+    border-radius: 100px;
+    width: 600px;
+    padding: 10px 15px;
+    border-style: solid;
+    color: #576572;
+    border-width: 1px;
+    border-color: #fff;}
+    
+form_custom {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}

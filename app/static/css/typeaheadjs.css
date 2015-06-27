@@ -1,31 +1,40 @@
-.tt-query {width: 100%
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-
-.tt-hint { width: 100%; 
-    color: #999
-}
-
-
-.tt-input-group {
-    width: 100%;
+.tt,
+*.tt-query {
+    width: 600px;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 100px;
+    outline: none;
 }
 
 .tt-dropdown-menu {
-    width: 100%; 	
-    text-align: center;
+    width: 600px;
     margin-top: 12px;
     padding: 8px 0;
-    background-color: #FFFEFE;
+    background-color: #fff;
     border: 1px solid #ccc;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
+*
+
+
+.tt-query {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    width: 600px;
+    border-radius: 100px;
+    padding: 10px 15px;
+}
+
+.tt-hint {
+    color: #999
+}
+
 
 .tt-suggestion {
     padding: 3px 20px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
 }
 
@@ -38,6 +47,3 @@
 .tt-suggestion p {
     margin: 0;
 }
-
-/*$('.typeahead.input-sm').siblings('input.tt-hint').addClass('hint-small');*/
-/*$('.typeahead.input-lg').siblings('input.tt-hint').addClass('hint-large');*/

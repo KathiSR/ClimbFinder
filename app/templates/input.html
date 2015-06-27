@@ -14,25 +14,27 @@
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
 
-    
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/font-awesome/css/font-awesome.min.css" type="text/css">
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="../static/css/animate.min.css" type="text/css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../static/css/creative.css" type="text/css">
-    <link href="../static/css/typeaheadjs.css" rel = "stylesheet">
-
+ 	<link rel="stylesheet" href="../static/css/custom.css" >
+    <link rel="stylesheet" href="../static/css/climbs-query.css" >
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	
+	
 
 </head>
 
@@ -60,8 +62,9 @@
                     <li>
                         <a class="page-scroll" href="#about_climbfindr">About ClimbFindr</a>
                     </li>
+                    
                     <li>
-                        <a class="page-scroll" href="#about_me">About Me</a>
+                        <a class="page-scroll" href="#contact">About Me</a>
                     </li>
                 </ul>
             </div>
@@ -73,132 +76,130 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-            	<br><br>
                 <h1>ClimbFindr</h1>
                 <hr>
-                <h4> Your mountain is waiting, ... so get on your way!</h4>
-                <br><br><br><br><br><br><br>
+                <p>Your mountain is waiting, ... so get on your way.</p>
+                <br><br><br><br>
                 <a href="#recommendation" class="btn btn-primary btn-xl page-scroll">Get a recommendation</a>
             </div>
         </div>
-    </header>
-
-<form action="/output" method="GET">
-<section class="bg-primary" id="recommendation">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">What do you want to climb?</h2>
-                    <p><p>
-                    
-                    
-                       <div class = "form-group">
-                          <div id="climbs-query">
+            </header>
+	
+	
+	
+    <section class="bg-primary" id="recommendation">
+    	<form action="/output" method="GET">
+        	<div class="container">
+            	<div class="row">
+                	<div class="col-lg-8 col-lg-offset-2 text-center">
+                    	<h2 class="section-heading">What do you want to climb?</h2>
+                    	<hr class="light">
+                    	
+                    	<div class = "form-group">
+                          <div id="climbs-query" >
                             <h4>Something similiar to</h4> 
-                            <input class = "form-control typeahead tt" type="text" id = "climb" name = "climb" placeholder = "e.g. High Exposure" ></input>
+                            <input class = "typeahead tt" type="text" id = "climb" style = "border-radius: 100px; width: 600px;
+                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
+                            name = "climb" placeholder = "e.g. High Exposure" ></input>
                           </div>
-                       </div>
-                       
-                       
-                       <div class = "form-group">
-                       		<h4>(Crag)</h4> 
-                            <input class = "form-control" type="text" id = "crag" name = "crag" placeholder = "e.g. The Gunks"></input>
-                       </div>
-                         
-                        <br><br><br> 
-                        <div class = "form-group">
-                            <h4>Something that has: </h4> 
-                            <input class = "form-control" type="text" id = "yes" name = "yes" placeholder = "e.g. exposure"></input>
-                       </div>
-                        
-                        
-                        <div class = "form-group">
-                            <h4>Something that does not have: </h4> 
-                            <input class = "form-control" type="text" id = "no" name = "no" placeholder = "e.g. crack"></input>
                         </div>
                         
                         
-                        <div class = "form-group">
-                            <h4>Where would you like to climb? </h4> 
-                            <input class = "form-control" type="text" id = "region" name = "region" placeholder = "e.g. New York"></input>
+        				
+        				<div class = "form-group">
+                          <div id="crags-query" >
+                            <h4>(crag)</h4> 
+                            <input class = "typeahead tt" type="text" id = "crag" style = "border-radius: 100px; width: 600px;
+                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
+                            name = "crag" placeholder = "e.g. The Gunks" ></input>
+                          </div>
                         </div>
-				<button type="submit" class="btn btn­default btn­primary btn-xl">Give me that beta!</button>
-                </div>
-            </div>
-        </div>
-</section>
-</form>
+        				
+                    	<br><br><br><br>
+                    	<div class = "form-group">
+                          <div id="the-features" >
+                            <h4>Something with</h4> 
+                            <input class = "typeahead tt" type="text" id = "yes" style = "border-radius: 100px; width: 600px;
+                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
+                            name = "yes" placeholder = "e.g. traverse" ></input>
+                          </div>
+                        </div>
+                    	
+                    	<div class = "form-group">
+                          <div id="the-features" >
+                            <h4>Something without</h4> 
+                            <input class = "typeahead tt" type="text" id = "no" style = "border-radius: 100px; width: 600px;
+                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
+                            name = "no" placeholder = "e.g. exposure" ></input>
+                          </div>
+                        </div>
 
-
-    <section id="output">
-        <div class="col-lg-8 col-lg-offset-2 text-center">
-        
-        <div class="container-fluid">
-  			<div class="row">
-			
-  			</div>
-		</div>
-			
-		
-
-    
-    
-     <section class="no-padding" id="about_climbfindr">
-        <div class="container-fluid">
-           
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    
-                </div>
-            </div>
-        </div>
+                    	
+                    	 <div class = "form-group">
+                          <div id="the-basics" >
+                            <h4>Where would you like to climb?</h4> 
+                            <input class = "typeahead tt" type="text" id = "region" style = "border-radius: 100px; width: 600px;
+                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
+                            name = "region" placeholder = "e.g. New York" ></input>
+                          </div>
+                        </div>
+                        
+                    	<button type = "submit" class="btn btn-default btn-xl">Give me the beta!</button>
+                	</div>
+            	</div>
+        	</div>
+    	</form>
     </section>
-<br>
-<br>
+    
 
+    <section id="results">
+        
+    </section>
 
-    <aside class="bg-dark">
+    
+
+    <section class="bg-dark" id = "about_climbfindr">
         <div class="container text-center">
             <div class="call-to-action">
- 
+                <h2>About ClimbFindr</h2>
+                <a href="https://docs.google.com/presentation/d/1RnhP0wcNpWNPqOvXdkl6Bd4EeiqlP9TSSo3dgC66pdQ/pub?start=false&loop=false&delayms=3000"> <i class="fa fa-play fa-5x"></i></a>
             </div>
         </div>
-    </aside>
+    </section>
 
-    <section id="about_me">
+    <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">About Me</h2>
+                    <h2 class="section-heading">Contact</h2>
                     <hr class="primary">
-                    <p><a href="mailto:your-email@your-domain.com">kathi.seidl@gmail.com</a></p>
-                    <p><a href="http://www.kathiseidlrathkopf.com"> kathiseidlrathkopf.com </a></p>
+                    <p>To find out more about me, visit my personal website or send me an email!</p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <p><a href="http://kathiseidlrathkopf.com"> <i class="fa fa-home fa-3x wow bounceIn"></i></a></p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <p><a href="mailto:kathi.seidl@gmail.com"><i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i></a></p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <p><a href="https://www.linkedin.com/in/kathiseidlrathkopf"><i class="fa fa-linkedin fa-3x wow bounceIn"></i></a></p>
+                </div>
+                
+                <div class="col-lg-4 text-center">
+                    <p><a href="https://github.com/KathiSR"><i class="fa fa-github fa-3x wow bounceIn"></i></a></p>
                 </div>
             </div>
         </div>
     </section>
-    
 
     <!-- jQuery -->
     <script src="../static/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../static/js/bootstrap.min.js"></script>
-    <script src="../static/js/typeahead.bundle.js"></script>
-    <script src="../static/js/climbs-query.js"></script>
-
 
     <!-- Plugin JavaScript -->
     <script src="../static/js/jquery.easing.min.js"></script>
@@ -207,13 +208,10 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../static/js/creative.js"></script>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
-    
-    
-    
+    <script src="../static/js/typeahead.bundle.js"></script>
+    <script src="../static/js/climbs-query.js"></script>
+	<script src="../static/js/the-basics.js"></script>
+	
 </body>
 
 </html>

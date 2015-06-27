@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ClimbFindr</title>
+    <title>Creative - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css">
@@ -24,8 +24,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../static/css/creative.css" type="text/css">
- 	<link rel="stylesheet" href="../static/css/custom.css" >
-    <link rel="stylesheet" href="../static/css/climbs-query.css" >
+	<link rel="stylesheet" href="../static/css/custom.css" >
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,14 +49,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">ClimbFindr</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#recommendation">Recommendation</a>
+                        <a class="page-scroll" href="#about">Recommendation</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#about_climbfindr">About ClimbFindr</a>
@@ -96,54 +95,34 @@
                     	<hr class="light">
                     	
                     	<div class = "form-group">
-                          <div id="climbs-query" >
-                            <h4>Something similiar to</h4> 
-                            <input class = "typeahead tt" type="text" id = "climb" style = "border-radius: 100px; width: 600px;
-                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
-                            name = "climb" placeholder = "e.g. High Exposure" ></input>
-                          </div>
-                        </div>
-                        
-                        
+            				<h4>Something similar to</h4> 
+            				<input id = "input" type="text" id = "climb" name = "climb" placeholder = "e.g. Arrow"></input>
+        				</div>
+        				
         				
         				<div class = "form-group">
-                          <div id="crags-query" >
-                            <h4>(crag)</h4> 
-                            <input class = "typeahead tt" type="text" id = "crag" style = "border-radius: 100px; width: 600px;
-                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
-                            name = "crag" placeholder = "e.g. The Gunks" ></input>
-                          </div>
-                        </div>
-        				
-                    	<br><br><br><br>
-                    	<div class = "form-group">
-                          <div id="the-features" >
-                            <h4>Something with</h4> 
-                            <input class = "typeahead tt" type="text" id = "yes" style = "border-radius: 100px; width: 600px;
-                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
-                            name = "yes" placeholder = "e.g. traverse" ></input>
-                          </div>
-                        </div>
+            				<h4>(Crag)</h4> 
+            				<input id = "input" type = "text`" id = "crag" name = "crag" placeholder = "e.g. The Gunks"></input>
+        				</div>
+    
                     	
                     	<div class = "form-group">
-                          <div id="the-features" >
-                            <h4>Something without</h4> 
-                            <input class = "typeahead tt" type="text" id = "no" style = "border-radius: 100px; width: 600px;
-                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
-                            name = "no" placeholder = "e.g. exposure" ></input>
-                          </div>
-                        </div>
-
+            				<h4>Something that has</h4> 
+            				<input id = "input" type="text" id = "yes" name = "yes" placeholder = "e.g. traverse"></input>
+        				</div>
                     	
-                    	 <div class = "form-group">
-                          <div id="the-basics" >
-                            <h4>Where would you like to climb?</h4> 
-                            <input class = "typeahead tt" type="text" id = "region" style = "border-radius: 100px; width: 600px;
-                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
-                            name = "region" placeholder = "e.g. New York" ></input>
-                          </div>
-                        </div>
-                        
+                    	<div class = "form-group">
+            				<h4>Something without</h4> 
+            				<input id = "input" type="text" id = "no" name = "no" placeholder = "e.g. roof"></input>
+        				</div>
+                    	
+                    	
+                    	<div class = "form-group">
+            				<h4>Where would you like to climb?</h4> 
+            				<input id = "input" type="text" id = "region" name = "region" placeholder = "e.g. New York"></input>
+        				</div>
+                    	
+                    	
                     	<button type = "submit" class="btn btn-default btn-xl">Give me the beta!</button>
                 	</div>
             	</div>
@@ -173,12 +152,12 @@
                     <a data-toggle="collapse"  href="#collapseOne">1. {{the_result[0].title()}}</a>
                 </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse">
+            <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
                     <p><b>Location:</b> {{area_info[0].title()}}, {{region_info[0].title()}}</p>
                     <p><b>Length:</b> {{length[0]}} pitches</p>
                     <p><b>Average rating (out of 4):</b> {{average_rating_info[0]}}</p>
-                    <p><b>Climb type:</b> {{type[0]}}</p>
+                    <p><b>Climb type:</b> {{type[2]}}</p>
                     <p><a href="{{url_info[0]}}"> more info on Mountain Project</a></p>
                 </div>
             </div>
@@ -195,7 +174,7 @@
                     <p><b>Location:</b> {{area_info[1].title()}}, {{region_info[1].title()}}</p>
                     <p><b>Length:</b> {{length[1]}} pitches</p>
                     <p><b>Average rating (out of 4):</b> {{average_rating_info[1]}}</p>
-                    <p><b>Climb type:</b> {{type[1]}}</p>
+                    <p><b>Climb type:</b> {{type[2]}}</p>
                     <p><a href="{{url_info[1]}}"> more info on Mountain Project</a></p>
                 </div>
             </div>
@@ -229,7 +208,7 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2>About ClimbFindr</h2>
-                <a href="https://docs.google.com/presentation/d/1RnhP0wcNpWNPqOvXdkl6Bd4EeiqlP9TSSo3dgC66pdQ/pub?start=false&loop=false&delayms=3000"> <i class="fa fa-play fa-5x"></i></a>
+                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
             </div>
         </div>
     </section>
@@ -275,10 +254,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../static/js/creative.js"></script>
-    <script src="../static/js/typeahead.bundle.js"></script>
-    <script src="../static/js/climbs-query.js"></script>
-	<script src="../static/js/the-basics.js"></script>
-	
+
 </body>
 
 </html>

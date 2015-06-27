@@ -47,3 +47,31 @@ name: 'items',
 displayKey: 'value',
 source: substringMatcher(items)
 });
+
+
+
+
+crags = [];
+$.getJSON( "static/crags.json", function( data ) {
+$.each( data, function( key, val ) {
+    crags.push(  val  );
+});
+// This displays the items as a list
+// $( "<ul/>", {
+//     "class": "my-new-list",
+//     html: items.join( ", " )
+//     }).appendTo( "body" );
+});
+
+
+
+$('#crags-query .typeahead').typeahead({
+hint: true,
+highlight: true,
+minLength: 2
+},
+{
+name: 'crags',
+displayKey: 'value',
+source: substringMatcher(crags)
+});

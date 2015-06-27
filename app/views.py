@@ -30,14 +30,17 @@ def climbfinder_output():
 	if request.args.get('crag'):
 		crag = request.args.get('crag')
 	else: crag = None
+	print crag
 	
 	if request.args.get('region'):
 		region = request.args.get('region')
 	else: region = None
-		
+	print region
+	
 	if request.args.get('yes'):
 		yes = request.args.get('yes')
 	else: yes = 'yes'
+	print yes
 	
 	if request.args.get('no'):
 		no = request.args.get('no')
@@ -76,13 +79,13 @@ def climbfinder_output():
 		
 		### feed into output page
 		return render_template("output.html", the_result = climb_info.name, region_info = climb_info.region,
-			area_info = climb_info.area, grade_info = climb_info, url_info = climb_info.url,
-			average_rating_info = climb_info.average_rating)
+		area_info = climb_info.area, grade_info = climb_info.grade, url_info = climb_info.url,
+		average_rating_info = climb_info.average_rating, length = climb_info.pitches, type = climb_info.type)
 			
 	except:
 		
 		### if it didn't work, return a generic error message
 		error = 'Sorry, something went wrong :('
-		return render_template("except.html",  the_result = error)
+		#return render_template("except.html",  the_result = error)
 	
 	

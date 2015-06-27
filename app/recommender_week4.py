@@ -5,14 +5,13 @@ from sklearn.metrics.pairwise import cosine_similarity
 import MySQLdb as mdb
 
 # set up connection with sql server
-con = mdb.connect('localhost', 'root', '', 'climbfinder_test')
-
 def setup_con(database):
 	con = mdb.connect('localhost', 'root', '', database)
 	return con
 
 
 def get_refclimb(name, crag = None):
+    con = setup_con('climbfinder_test')
     if crag == None:
         sql  = "SELECT * FROM Features WHERE name LIKE '%(name)s'" %{"name": name}
         ref_climb = pandas.read_sql_query(sql=sql, con=con)
@@ -25,15 +24,16 @@ def get_refclimb(name, crag = None):
     	
 
 def get_comparisonclimbs(region = None, yes = 'yes', no = 'no'):
-    if region != None:
-        sql  = "SELECT * FROM Features WHERE region LIKE '%(region)s' AND %(yes)s = 1 AND %(no)s = 0" %{"region": region,
+	con = setup_con('climbfinder_test')
+	if region != None:
+		sql  = "SELECT * FROM Features WHERE region LIKE '%(region)s' AND %(yes)s = 1 AND %(no)s = 0" %{"region": region,
                                                                                                       "yes": yes, 
                                                                                                       "no":no}
-    else: 
-        sql  = "SELECT * FROM Features WHERE %(yes)s = 1 AND %(no)s = 0" %{"yes": yes, "no":no}
+	else: 
+		sql  = "SELECT * FROM Features WHERE %(yes)s = 1 AND %(no)s = 0" %{"yes": yes, "no":no}
     
-    comparisonclimbs = pandas.read_sql_query(sql=sql, con=con)
-    return comparisonclimbs	
+	comparisonclimbs = pandas.read_sql_query(sql=sql, con=con)
+	return comparisonclimbs	
     
     
 def get_max_sim(ref_climb, comparisonclimbs, n = 5,):

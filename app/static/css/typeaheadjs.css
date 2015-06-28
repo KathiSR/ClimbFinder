@@ -1,28 +1,29 @@
 .tt,
 *.tt-query {
-    width: 600px;
+    width: 100%;
     padding: 10px 15px;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 100px;
     outline: none;
+    color: #576572;
 }
 
-.tt-dropdown-menu {
-    width: 600px;
-    margin-top: 12px;
-    padding: 8px 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+.tt-menu {    // used to be tt-dropdown-menu in older versions
+  width: 100%;
+  margin-top: 4px;
+  padding: 4px 0;
+  background-color: #f05f40;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+ 
 }
 *
 
 
 .tt-query {
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    width: 600px;
+    width: 100%;
     border-radius: 100px;
     padding: 10px 15px;
 }
@@ -34,13 +35,13 @@
 
 .tt-suggestion {
     padding: 3px 20px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
 }
 
 .tt-suggestion.tt-cursor { /* UPDATE: newer versions use .tt-suggestion.tt-cursor */
     color: #fff;
-    background-color: #0097cf;
+    background-color: #576572;
 
 }
 

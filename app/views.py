@@ -52,18 +52,22 @@ def climbfinder_output():
 		
 		### retrieve the reference climb from sql
 		refclimb = get_refclimb(climb, crag)
-	
+		available_crags = refclimb.crag
 		if len(refclimb) > 1:
-			error = "Sorry! More than one climb named '%(climb)s' found in database. Please specify crag." %{"climb": climb.title()}
-			return render_template("except.html", the_result = error)
+		
+			error = "Sorry! Climbs named '%(climb)s' were found in the following crags:" %{"climb": climb.title()}
+			error2 = "Please try again and specify crag."
+			
+			return render_template("except_duplicateclimbs.html", the_result = error, the_crags = refclimb.crag, the_result_2 = error2)
 	
 		if len(refclimb) == 0:
-			error = "Sorry! Climb '%(climb)s' not found in database." %{"climb": climb.title()}
+			error = "Sorry! Climb '%(climb)s' not found in database. Please check back soon - we are working on expanding the database." %{"climb": climb.title()}
 			return render_template("except.html",  the_result = error)
 		
 	
 		### retrieve the reference climb from sql
 		comparisonclimbs = get_comparisonclimbs(region, yes, no)
+		
 
 		if len(comparisonclimbs) == 0:
 			error = 'No climbs matching your criteria found in database.'
@@ -85,7 +89,7 @@ def climbfinder_output():
 	except:
 		
 		### if it didn't work, return a generic error message
-		error = 'Sorry, something went wrong :('
-		#return render_template("except.html",  the_result = error)
+		error = 'Sorry, something went wrong :(. Please try again.'
+		return render_template("except.html",  the_result = error)
 	
 	

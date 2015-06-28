@@ -7,7 +7,7 @@
   border-width: 3px;
   margin-right: auto;
   margin-left: auto;
-  width: 600px;
+  width: 75%;
    }
 
 
@@ -18,7 +18,7 @@
     
 #input{
     border-radius: 100px;
-    width: 600px;
+    width: 75%;
     padding: 10px 15px;
     border-style: solid;
     color: #576572;

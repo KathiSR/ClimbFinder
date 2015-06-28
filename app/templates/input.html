@@ -22,10 +22,11 @@
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="../static/css/animate.min.css" type="text/css">
 
-    <!-- Custom CSS -->
+   <!-- Custom CSS -->
     <link rel="stylesheet" href="../static/css/creative.css" type="text/css">
+    <link rel="stylesheet" href="../static/css/typeaheadjs.css" type = "text/css">
  	<link rel="stylesheet" href="../static/css/custom.css" >
-    <link rel="stylesheet" href="../static/css/climbs-query.css" >
+  
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,7 +79,7 @@
             <div class="header-content-inner">
                 <h1>ClimbFindr</h1>
                 <hr>
-                <p>Your mountain is waiting, ... so get on your way.</p>
+                <p>Your mountain is waiting ... so get on your way.</p>
                 <br><br><br><br>
                 <a href="#recommendation" class="btn btn-primary btn-xl page-scroll">Get a recommendation</a>
             </div>
@@ -89,67 +90,64 @@
 	
     <section class="bg-primary" id="recommendation">
     	<form action="/output" method="GET">
+        	
+        	<!-- header -->
         	<div class="container">
-            	<div class="row">
-                	<div class="col-lg-8 col-lg-offset-2 text-center">
-                    	<h2 class="section-heading">What do you want to climb?</h2>
-                    	<hr class="light">
-                    	
-                    	<div class = "form-group">
-                          <div id="climbs-query" >
-                            <h4>Something similiar to</h4> 
-                            <input class = "typeahead tt" type="text" id = "climb" style = "border-radius: 100px; width: 600px;
-                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
-                            name = "climb" placeholder = "e.g. High Exposure" ></input>
-                          </div>
-                        </div>
-                        
-                        
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">What kind of climb are you looking for?</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+            </div>
+            
+            <!-- input fields -->
+            <div class="container">
+            <div class="row">
+      		<div class="col-lg-12 text-center">
+	
+			<div id="climbs-query">
+                <h3>Something similiar to</h3> 
+                <input class = "typeahead tt" type="text" id = "climb" 
+                name = "climb" placeholder = "e.g. High Exposure" ></input>
+            </div>
         				
-        				<div class = "form-group">
-                          <div id="crags-query" >
-                            <h4>(crag)</h4> 
-                            <input class = "typeahead tt" type="text" id = "crag" style = "border-radius: 100px; width: 600px;
-                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
-                            name = "crag" placeholder = "e.g. The Gunks" ></input>
-                          </div>
-                        </div>
-        				
-                    	<br><br><br><br>
-                    	<div class = "form-group">
-                          <div id="the-features" >
-                            <h4>Something with</h4> 
-                            <input class = "typeahead tt" type="text" id = "yes" style = "border-radius: 100px; width: 600px;
-                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
-                            name = "yes" placeholder = "e.g. traverse" ></input>
-                          </div>
-                        </div>
-                    	
-                    	<div class = "form-group">
-                          <div id="the-features" >
-                            <h4>Something without</h4> 
-                            <input class = "typeahead tt" type="text" id = "no" style = "border-radius: 100px; width: 600px;
-                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
-                            name = "no" placeholder = "e.g. exposure" ></input>
-                          </div>
-                        </div>
+			 <br><p><i class="fa fa-star fa-1x"></i> <i class="fa fa-star fa-1x"></i> <i class="fa fa-star fa-1x"></i></p>
 
+             <div id="the-features" >
+                 <h4>Something with</h4> 
+                 <input class = "typeahead tt" type="text" id = "yes"
+                 name = "yes" placeholder = "e.g. traverse" ></input>
+             </div>
                     	
-                    	 <div class = "form-group">
-                          <div id="the-basics" >
-                            <h4>Where would you like to climb?</h4> 
-                            <input class = "typeahead tt" type="text" id = "region" style = "border-radius: 100px; width: 600px;
-                            padding: 10px 15px; border-style: solid; color: #576572; border-width: 1px; border-color: #fff;" 
-                            name = "region" placeholder = "e.g. New York" ></input>
-                          </div>
-                        </div>
-                        
-                    	<button type = "submit" class="btn btn-default btn-xl">Give me the beta!</button>
-                	</div>
-            	</div>
-        	</div>
+             <div id="the-features" >
+                 <h4>Something without</h4> 
+                 <input class = "typeahead tt" type="text" id = "no" 
+                 name = "no" placeholder = "e.g. exposure" ></input>
+             </div>
+                          
+             <div id="the-basics" >
+                  <h4>Where would you like to climb?</h4> 
+                  <input class = "typeahead tt" type="text" id = "region" 
+                  name = "region" placeholder = "e.g. New York" ></input>
+             </div>
+            
+             <br><br>
+             <!-- submit button -->
+             <button type = "submit" class="btn btn-hover btn-xl">Give me the beta!</button>
+      		 
+      		 
+      		</div>
+      		</div>
+      		</div>
+      		
+            
+            
+            
+        </div>	
     	</form>
     </section>
+    
     
 
     <section id="results">

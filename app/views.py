@@ -79,7 +79,7 @@ def climbfinder_output():
 		
 		### feed into output page
 		return render_template("output.html", the_result = climb_info.name, region_info = climb_info.region,
-		area_info = climb_info.area, grade_info = climb_info.grade, url_info = climb_info.url,
+		area_info = climb_info.crag, grade_info = climb_info.grade, url_info = climb_info.url,
 		average_rating_info = climb_info.average_rating, length = climb_info.pitches, type = climb_info.type)
 			
 	except:
